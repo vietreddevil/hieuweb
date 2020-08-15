@@ -1,0 +1,152 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat:300');
+
+html, body {
+  height: 100%;
+  width: 100%;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  font-size: 14px;
+  background-color: #EEEEEE;
+  color: black !important;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+section {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  max-width: 536px;
+  margin: auto;
+  position: relative;
+}
+
+section:before {
+  content: "";
+  position: absolute; 
+  background-size: 100%;
+  width: 100%;
+  height: 402px;
+  z-index: -1;
+}
+
+.logo { 
+  width: 36px;
+  height: 33px;
+  background-size: 100%;
+  margin-bottom: 35px;
+  opacity: 0;
+  animation: slideUp 1s cubic-bezier(0.19, 1, 0.30, 1) 1.3s forwards;
+}
+
+.title {
+  background: url("/title.svg") no-repeat;
+  width: 219px;
+  height: 36px;
+  background-size: 100%;
+  opacity: 0;
+  animation: slideUp 1s cubic-bezier(0.19, 1, 0.30, 1) 0.2s forwards;
+}
+
+.subtitle {
+  margin-top: 25px;
+  color: #BDB3CB;
+  font-size: 17px;
+  text-align: center;
+  letter-spacing: 0.5;
+  opacity: 0;
+  animation: slideUp 1s cubic-bezier(0.19, 1, 0.30, 1) 0.5s forwards;
+}
+
+
+a {
+  color: inherit;
+  text-decoration: underline;
+}
+
+p {
+  margin: 0.83rem 0;
+}
+
+@keyframes slideUp {
+  0% {
+    transform: translateY(40px);
+    opacity: 0;
+  }
+  50% {
+    opacity: 0.2%;
+  }
+  100% {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+#menu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 50px;
+  background-color: #4267b2;
+} 
+
+#menu a {
+  line-height: 50px;
+  color: white;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+#menu a:hover {
+  font-size: 16px;
+}
+
+#menu .right-item {
+  display: inline;
+}
+
+#menu .right-item ul li a{
+  height: 50px;
+  padding: 0 15px;
+  line-height: 50px;
+  text-decoration: none;
+}
+
+.card {
+  background-color: white;
+  border-radius: 4px;
+  padding: 10px;
+  box-shadow: 1px 1px 2px 0 #666;
+}
+
+.img-product-small-logo {
+  width: 66.67%;
+  margin-top: 1.83rem;
+}
+
+.not-free {
+  background-color: #f97406;
+  padding: 10px 25px;
+  font-weight: bold;
+  color: white;
+}
+
+.info-wrap-button {
+  margin: 1.83rem 0;
+}
+
+.info-wrap-button a {
+  text-decoration: none;
+}
+
+.font-bold {
+  font-weight: 900;
+}

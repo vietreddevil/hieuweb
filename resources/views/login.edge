@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Helooooo</title>
+  <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  {{ style('bootstrap.min.css') }}
+  {{ style('style') }}
+  <style>
+    .login-form-i {
+      position: absolute;
+    left: 13px;
+    top: 9px;
+    font-size: 18px;
+    }
+    .relative {
+      position: relative;
+    }
+    .form-control {
+      text-indent: 17px;
+    }
+  </style>
+</head>
+<body>
+  <div class="row">
+    <div class="col-sm-4 col-xs-1"></div>
+    <div class="card text-center col-sm-4 col-xs-10" style="margin-top: 50px;">
+      <h3 class="font-bold">RedTool</h3>
+      <form action="/admin-login" method="post">
+        {{ csrfField() }}
+        <div class="form-group relative">
+          <i class="login-form-i fa fa-user"></i>
+          <input name="username" type="text" class="form-control" placeholder="Username" required="required">
+        </div>
+        <div class="form-group relative">
+          <i class="login-form-i fa fa-lock"></i>
+          <input name="password" type="password" class="form-control" placeholder="Password" required="required">					
+        </div>
+        <div class="form-group relative">
+          <input type="submit" class="btn btn-primary btn-block btn-lg" value="Login">
+        </div>
+      </form>
+    </div>
+    <div class="col-sm-4 col-xs-1"></div>
+  </div>
+  {{script('bootstrap.min.js')}}
+  {{script('jquery.min.js')}}
+</body>
+</html>

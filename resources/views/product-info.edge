@@ -1,0 +1,45 @@
+@layout('master')
+@section('content')
+<div class="card">
+    <div class="product-head row">
+        <div class="col-xs-4 text-center">
+            <img src="{{ assetsUrl('image.gif') }}" class="img-product-small-logo">
+        </div>
+        <div class="col-xs-8">
+            <h2 class="font-bold">{{productInfo.title}}</h2>
+            <h4 class="font-bold">{{productInfo.version}}</h4>
+            <div class="info-wrap-button">
+                <span class="not-free">Miễn phí</span>
+            </div>
+            <div class="info-wrap-button" style="margin-top: 2.3rem;">
+                <form method="POST" action="/download">
+                    {{ csrfField() }}
+                    <input type="hidden" name="productID" value="{{productInfo.fileID}}">
+                    <button class="btn btn-success" type="submit">Tải xuống</button>
+                </form>
+            </div>
+        </div>
+        <div class="text-center col-xs-12" style="margin: 1.83rem 0; margin-bottom: 0;">
+            <div style="border-bottom: 1px solid lightgray; width: 90%; margin-left: 5%; height: 1px;"></div>
+        </div>
+    </div>
+    <div style="margin: 1.83rem 50px;">
+        <h4 class="font-bold" style="margin-top: 0;">Mô tả</h4>
+        <input type="hidden" id="hdfDesc" value="{{productInfo.description}}">
+        <div id="desc">
+            
+        </div>
+    </div>
+    <div style="margin: 1.83rem 50px;">
+        <h4 class="font-bold" style="margin-top: 0;">Video hướng dẫn</h4> 
+        <iframe width="420" height="315" frameborder="0" scrolling="no" allowfullscreen
+                src="{{productInfo.videourl.replace('watch?v=', 'embed/')}}">
+        </iframe>
+    </div>
+</div>
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        document.querySelector('#desc').innerHTML = document.querySelector('#hdfDesc').value.replace('\\n', '<br>')
+    })
+</script>
+@endsection 

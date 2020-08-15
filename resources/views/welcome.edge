@@ -1,0 +1,22 @@
+@layout('master')
+@section('content')
+<div class="row">
+  @each(product in products)
+  <div class="col-xs-6 col-sm-3" style="margin-bottom: 20px;">
+    <div class="card text-center">
+      <img src="{{ assetsUrl('image.gif') }}" class="img-product-small-logo">
+      <div class="card-info">
+        <p>{{product.title}}</p>
+        <p>{{product.version}}</p>
+        <div class="text-center info-wrap-button">
+          <span class="not-free">Miễn phí</span>
+        </div>
+        <div class="text-center info-wrap-button">
+          <a class="btn btn-info" href="/product-info/{{product.fileID}}">Chi tiết</a>
+        </div>
+      </div>
+    </div>
+  </div> 
+  @endeach
+</div>
+@endsection
